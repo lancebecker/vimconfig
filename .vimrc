@@ -15,16 +15,16 @@ call vundle#rc()
 "                          Vundle configuration                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Bundle 'ervandew/supertab.git'
-Bundle 'Lokaltog/vim-powerline.git'
+Bundle 'ervandew/supertab'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'c9s/bufexplorer'
 Bundle 'vim-scripts/netrw.vim.git'
 Bundle 'mileszs/ack.vim.git'
-Bundle 'Lokaltog/TagHighlight.git'
-Bundle 'scrooloose/syntastic.git'
+Bundle 'Lokaltog/TagHighlight'
+Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
@@ -35,6 +35,7 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'matchit.zip'
 Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'leshill/vim-json'
+Bundle 'arecarn/frisk'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -80,8 +81,7 @@ set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
 set guifont=Inconsolata-dz\ For\ Powerline:h13
-set fuoptions=maxvert,maxhorz
-colorscheme seoul256 
+colorscheme fine_blue
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -179,9 +179,6 @@ nnoremap k gk
 " delete char without yank
 noremap x "_x
 noremap X "_X
-
-" fast saving
-nnoremap <leader>w :w!<cr>
 
 " reselect visual block after indent
 vnoremap < <gv
