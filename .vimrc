@@ -36,6 +36,7 @@ Bundle 'matchit.zip'
 Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'leshill/vim-json'
 Bundle 'arecarn/frisk'
+Bundle 'SirVer/ultisnips'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -81,7 +82,7 @@ set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
 set guifont=Inconsolata-dz\ For\ Powerline:h13
-colorscheme fine_blue
+colorscheme kolor
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -144,6 +145,10 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 " highlight current line vertically
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
+
+au vimrc BufEnter *.snippets setf snippets
+au vimrc FileType snippets set noexpandtab
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,3 +243,12 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['pyflakes']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             UltiSnips                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsSnippetsDir         = $HOME . '/.vim/UltiSnips'
+let g:UltiSnipsExpandTrigger       = "<S-k>"
+let g:UltiSnipsListSnippets        = "-s"
+let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
+

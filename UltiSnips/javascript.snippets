@@ -1,0 +1,124 @@
+snippet ifun "immediate function (ifun)"
+(function () {
+    'use strict';
+    // closure scope
+}());
+endsnippet
+
+snippet forin "for in (forin)"
+for (var prop in obj) {
+  if (obj.hasOwnProperty(prop)) {
+    obj.prop;
+  }
+}
+endsnippet
+
+snippet ifor "improved for loop (ifor)"
+for (i = 0, len = arr.length; i < len; i++) {
+  // array length is calculated only 1 time and then stored
+}
+endsnippet
+
+snippet constructor "constructor pattern (con)"
+var ConstructorName = (function() {
+  'use strict';
+
+  function ConstructorName(arg1, arg2) {
+    // enforces new
+    if (!(this instanceof ConstructorName)) {
+        return new ConstructorName();
+    }
+
+    // constructor body
+  }
+
+  ConstructorName.prototype.someMethod = function(arg) {
+    // method body
+  }
+
+  return ConstructorName;
+
+}());
+endsnippet
+
+snippet module "module pattern (module)"
+var moduleName = (function() {
+  'use strict';
+
+  var privateVar = '';
+
+  var moduleName = {
+    init: {
+      // kickoff
+    }
+  }
+
+  return moduleName;
+
+}());
+endsnippet
+
+snippet memio "memoization (memio)"
+var expensiveFunction = (function() {
+  'use strict';
+
+  var funcMemoized = function() {
+    var cacheKey = JSON.stringify(Array.prototype.slice.call(arguments));
+    var result;
+
+    if (!funcMemoized.cache[cacheKey]) {
+        // your expensive computation goes here
+
+        funcMemoized.cache[cacheKey] = result;
+    }
+
+    return funcMemoized.cache[cacheKey];
+  }
+
+  funcMemoized.cache = {};
+
+  return funcMemoized;
+}());
+endsnippet
+
+snippet throttle "throttle method (throttle)"
+var onResize = (function () {
+  'use strict';
+
+  var timeWindow = 200; // time in ms
+  var lastExecution = new Date((new Date()).getTime() - timeWindow);
+
+  var onResize = function (args) {
+     // your code goes here
+  };
+
+  return function() {
+    if ((lastExecution.getTime() + timeWindow) <= (new Date()).getTime()) {
+      lastExecution = new Date();
+      return onResize.apply(this, arguments);
+    }
+  };
+}());
+endsnippet
+
+snippet debounce "debounce method (debounce)"
+var autocomplete = (function () {
+  'use strict';
+
+  var timeWindow = 500; // time in ms
+  var timeout;
+
+  var autocomplete = function (arg1, arg2) {
+    // your code goes here
+  };
+
+  return function() {
+    var context = this;
+    var args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(function(){
+      autocomplete.apply(context, args);
+    }, timeWindow);
+  };
+}());
+endsnippet
