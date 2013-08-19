@@ -41,7 +41,7 @@ Name	     |  Desc                                       | Bindings
 [sparkup](https://github.com/rstacruz/sparkup) | A parser for a condensed HTML format. | `,e`
 [nerdcommenter](https://github.com/scrooloose/nerdcommenter) | The premier commenting tool. | `c<space>`
 [matchit](https://github.com/mirell/vim-matchit) | Import of Benji Fisher's matchit vim plugin, with history, extends `%` support.
-[supertab](https://github.com/ervandew/supertab) | Perform all your vim insert mode completions with Tab.
-
+[supertab](https://github.com/ervandew/supertab) | Perform all your vim insert mode completions with Tab. | `<tab>`
+[ultisnips](https://github.com/SirVer/ultisnips) | This is an implementation of TextMates Snippets for the Vim Text Editor. It has all features of TextMates Snippets and then some. | `K`
 
 
