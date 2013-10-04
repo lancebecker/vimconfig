@@ -82,7 +82,7 @@ set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
 set guifont=Inconsolata-dz\ For\ Powerline:h13
-colorscheme kolor
+colorscheme candystripe
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -248,7 +248,6 @@ let g:syntastic_python_checkers = ['pyflakes']
 "                             UltiSnips                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:UltiSnipsSnippetsDir         = $HOME . '/.vim/UltiSnips'
-let g:UltiSnipsExpandTrigger       = "<S-k>"
-let g:UltiSnipsListSnippets        = "-s"
+let g:UltiSnipsExpandTrigger       = "<S-C-k>"
 let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 
