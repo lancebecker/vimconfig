@@ -20,11 +20,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'c9s/bufexplorer'
 Bundle 'vim-scripts/netrw.vim.git'
-Bundle 'mileszs/ack.vim.git'
-Bundle 'Lokaltog/TagHighlight'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
@@ -33,18 +30,16 @@ Bundle 'surround.vim'
 Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'matchit.zip'
-Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'leshill/vim-json'
-Bundle 'arecarn/frisk'
 Bundle 'SirVer/ultisnips'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tudorprodan/html_annoyance.vim.git'
-Bundle 'jnwhiteh/vim-golang.git'
-Bundle 'groenewege/vim-less.git'
 Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'slim-template/vim-slim.git'
+Bundle 'athaeryn/vim-concealerator.git'
+Bundle 'junegunn/seoul256.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           reset vimrc augroup                           "
@@ -82,7 +77,7 @@ set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
 set guifont=Inconsolata-dz\ For\ Powerline:h13
-colorscheme candystripe
+colorscheme seoul256-light 
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -148,7 +143,6 @@ au WinEnter * set cursorline cursorcolumn
 
 au vimrc BufEnter *.snippets setf snippets
 au vimrc FileType snippets set noexpandtab
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -251,3 +245,7 @@ let g:UltiSnipsSnippetsDir         = $HOME . '/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger       = "<S-C-k>"
 let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             Seoul256 colorscheme                        "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:seoul256_background = 256
