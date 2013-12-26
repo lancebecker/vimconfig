@@ -40,6 +40,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'athaeryn/vim-concealerator.git'
 Bundle 'junegunn/seoul256.vim'
+Bundle 'mhinz/vim-startify'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           reset vimrc augroup                           "
@@ -77,7 +78,8 @@ set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
 set guifont=Inconsolata-dz\ For\ Powerline:h13
-colorscheme seoul256-light 
+"colorscheme seoul256-light
+colorscheme kolor
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -207,7 +209,7 @@ nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<B
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Ack                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Gundo                                    "
@@ -249,3 +251,36 @@ let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 "                             Seoul256 colorscheme                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:seoul256_background = 256
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             Startify "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:startify_custom_header = [
+            \ '                                                 ',
+            \ '            _________________________            ',
+            \ '            |                       |            ',
+            \ '             |____     _____     ____|           ',
+            \ '      ********* |    |    |    | *********       ',
+            \ '   *************|    |    |  ****************    ',
+            \ ' *****        **|    |    ********        *****  ',
+            \ '****            |    |******** |            **** ',
+            \ '****            |    ******    |            **** ',
+            \ '****            | ********|    |            **** ',
+            \ ' *****        ********    |    |**        *****  ',
+            \ '   ***************   |    |    |*************    ',
+            \ '      *********_|    |____|    |_*********       ',
+            \ '           |          |             |            ',
+            \ '           |________________________|            ',
+            \ '                                                 ',
+            \ '                                                 ',
+            \ '                                                 ',
+            \ ]
+
+let g:ctrlp_reuse_window = 'startify'
+let g:startify_skiplist = [
+       \ 'COMMIT_EDITMSG',
+       \ $VIMRUNTIME .'/doc',
+       \ 'bundle/.*/doc',
+       \ '\.DS_Store'
+       \ ]
+
