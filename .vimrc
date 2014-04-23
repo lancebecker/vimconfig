@@ -8,24 +8,24 @@ set nocompatible
 filetype off
 
 " Setup vundle
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Vundle configuration                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'c9s/bufexplorer'
 Bundle 'vim-scripts/netrw.vim.git'
-Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'gmarik/vundle'
+Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Bundle 'mhinz/vim-signify'
 Bundle 'surround.vim'
 Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter.git'
@@ -38,9 +38,8 @@ Bundle 'tudorprodan/html_annoyance.vim.git'
 Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'slim-template/vim-slim.git'
-Bundle 'athaeryn/vim-concealerator.git'
-Bundle 'junegunn/seoul256.vim'
 Bundle 'mhinz/vim-startify'
+Bundle 'chriskempson/base16-vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           reset vimrc augroup                           "
@@ -77,9 +76,7 @@ set guioptions-=m
 set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
-set guifont=Inconsolata-dz\ For\ Powerline:h13
-"colorscheme seoul256-light
-colorscheme kolor
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h14
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -120,6 +117,9 @@ set wildignore+=*.jpg,*.gif,*.png,*.o,*.obj,*.bak,*.rbc
 set wildignore+=Icon*,\.DS_Store,*.out,*.scssc,*.sassc
 set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
 set wildmenu "show completion matches above command line
+set encoding=utf-8
+
+colorscheme base16-atelierdune 
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -228,11 +228,6 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:sparkupExecuteMapping = '<leader>e'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             Powerline                                   "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:Powerline_symbols = 'fancy'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Syntastic                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_error_symbol = '✗'
@@ -241,16 +236,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['pyflakes']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             UltiSnips                                   "
+"                             Airline                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsSnippetsDir         = $HOME . '/.vim/UltiSnips'
-let g:UltiSnipsExpandTrigger       = "<S-C-k>"
-let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             Seoul256 colorscheme                        "
+"                             UltiSnips                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:seoul256_background = 256
+let g:UltiSnipsSnippetsDir         = $HOME . '/dotfiles/vim/UltiSnips'
+let g:UltiSnipsExpandTrigger       = "<S-C-k>"
+let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Startify "
