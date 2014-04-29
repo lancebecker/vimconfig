@@ -15,31 +15,25 @@ call vundle#rc()
 "                          Vundle configuration                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+Bundle 'mileszs/ack.vim'
 Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
-Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'c9s/bufexplorer'
-Bundle 'vim-scripts/netrw.vim.git'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'bling/vim-bufferline'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'mhinz/vim-signify'
-Bundle 'surround.vim'
 Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'matchit.zip'
-Bundle 'leshill/vim-json'
-Bundle 'SirVer/ultisnips'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tudorprodan/html_annoyance.vim.git'
-Bundle 'othree/html5.vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'slim-template/vim-slim.git'
-Bundle 'mhinz/vim-startify'
 Bundle 'chriskempson/base16-vim'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-surround'
+Bundle 'mhinz/vim-signify'
+Bundle 'mhinz/vim-hugefile'
+Bundle 'mhinz/vim-startify'
+Bundle 'pangloss/vim-javascript'
+Bundle 'leshill/vim-json'
+Bundle 'slim-template/vim-slim.git'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           reset vimrc augroup                           "
@@ -76,7 +70,7 @@ set guioptions-=m
 set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
-set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h14
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h15
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -119,6 +113,7 @@ set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
 set wildmenu "show completion matches above command line
 set encoding=utf-8
 
+set background=dark
 colorscheme base16-atelierdune 
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
@@ -212,11 +207,6 @@ nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<B
 nnoremap <leader>a :Ack
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                Gundo                                    "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <silent><F3> :GundoToggle<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Ctrl P                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
@@ -239,15 +229,19 @@ let g:syntastic_python_checkers = ['pyflakes']
 "                             Airline                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             UltiSnips                                   "
+"                             Signify                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsSnippetsDir         = $HOME . '/dotfiles/vim/UltiSnips'
-let g:UltiSnipsExpandTrigger       = "<S-C-k>"
-let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_line_highlight     = 1
+let g:signify_sign_overwrite     = 1
+highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=159
+highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
+highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Startify "
