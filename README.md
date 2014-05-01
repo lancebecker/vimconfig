@@ -1,6 +1,7 @@
 # vim configs
 
  *Adapted from: https://github.com/Valloric/dotfiles/blob/master/vim/vimrc.vim*
+ 
 
 ## Installation
 
@@ -28,20 +29,17 @@ Vundle, the plug-in manager for Vim
 Name	     |  Desc                                       | Bindings
 ------------ | ------------------------------------------- | ------------
 [ctrlp](https://github.com/kien/ctrlp.vim) | Fuzzy file, buffer, mru and tag finder | `,f`
+[airline](https://github.com/bling/vim-airline) | lean & mean status/tabline for vim that's light as air |
 [bufexplorer](https://github.com/c9s/bufexplorer) | With bufexplorer, you can quickly and easily switch between buffers. | `,be`
-[easymotion](https://github.com/Lokaltog/vim-easymotion) | Vim motions on speed!  | `,,w` `,,t`
 [ack](https://github.com/mileszs/ack.vim) | Vim plugin for the Perl module / CLI script | `,a`
-[vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) | A Vim plugin for visually displaying indent levels in code | `F4`
-[Gundo](https://github.com/sjl/gundo.vim/) | Gundo.vim is Vim plugin to visualize your Vim undo tree. | `F3`
-[powerline](https://github.com/Lokaltog/vim-powerline) | Mega overhaul of the statusbar, colorized per mode.
 [fugitive](https://github.com/tpope/vim-fugitive) | fugitive.vim: a Git wrapper so awesome, it should be illegal
 [syntastic](https://github.com/scrooloose/syntastic) | Syntax checking hacks for vim
 [vim-git](https://github.com/tpope/vim-git) | Vim Git runtime files
 [ctrlp](https://github.com/kien/ctrlp.vim) | Fuzzy file, buffer, mru and tag finder | `,f`
 [sparkup](https://github.com/rstacruz/sparkup) | A parser for a condensed HTML format. | `,e`
 [nerdcommenter](https://github.com/scrooloose/nerdcommenter) | The premier commenting tool. | `c<space>`
-[matchit](https://github.com/mirell/vim-matchit) | Import of Benji Fisher's matchit vim plugin, with history, extends `%` support.
 [supertab](https://github.com/ervandew/supertab) | Perform all your vim insert mode completions with Tab. | `<tab>`
-[ultisnips](https://github.com/SirVer/ultisnips) | This is an implementation of TextMates Snippets for the Vim Text Editor. It has all features of TextMates Snippets and then some. | `K`
 
+## Screenshot
 
+![](https://camo.githubusercontent.com/eecdcc0e13dec640a9a3becf84759b98d5032689/687474703a2f2f692e696d6775722e636f6d2f653739396333442e706e67)
