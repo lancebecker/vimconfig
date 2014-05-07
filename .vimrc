@@ -15,13 +15,14 @@ call vundle#rc()
 "                          Vundle configuration                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Bundle 'mileszs/ack.vim'
 Bundle 'gmarik/vundle'
+Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
 Bundle 'c9s/bufexplorer'
 Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'scrooloose/syntastic'
 Bundle 'chriskempson/base16-vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-git'
@@ -112,9 +113,15 @@ set wildignore+=Icon*,\.DS_Store,*.out,*.scssc,*.sassc
 set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
 set wildmenu "show completion matches above command line
 set encoding=utf-8
+set list
+set lcs=trail:༎,eol:ᚋ,nbsp:፨,tab:ᑀ\ "show “invisible” characters
 
 set background=dark
-colorscheme base16-atelierdune 
+colorscheme base16-atelierdune
+
+"special overrides for the lcs characters
+hi NonText ctermfg=4 guifg=#444444
+hi SpecialKey ctermfg=4 guifg=#444444
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
