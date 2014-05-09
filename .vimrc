@@ -19,6 +19,7 @@ Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
+Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'c9s/bufexplorer'
 Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter.git'
@@ -219,6 +220,7 @@ nnoremap <leader>a :Ack
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:15,results:15'
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_switch_buffer = '0'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
