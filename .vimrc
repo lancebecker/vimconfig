@@ -114,7 +114,8 @@ set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
 set wildmenu "show completion matches above command line
 set encoding=utf-8
 set list
-set lcs=trail:༎,eol:ᚋ,nbsp:፨,tab:ᑀ\ "show “invisible” characters
+set lcs=trail:༎,eol:ᚋ,nbsp:፨,tab:⇥\          "show “invisible” characters
+set helpheight=200                           " help windows take up near full window size
 
 set background=dark
 colorscheme base16-atelierdune
@@ -217,6 +218,8 @@ nnoremap <leader>a :Ack
 "                              Ctrl P                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:15,results:15'
+let g:ctrlp_switch_buffer = '0'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -230,7 +233,9 @@ let g:sparkupExecuteMapping = '<leader>e'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': ['coffee'],
+                     \ 'passive_filetypes': ['html, js'] }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Airline                                     "
@@ -244,7 +249,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 "                             Signify                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:signify_vcs_list = [ 'git' ]
-let g:signify_line_highlight     = 1
+let g:signify_line_highlight     = 0
 let g:signify_sign_overwrite     = 1
 highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=159
 highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
