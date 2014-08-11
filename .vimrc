@@ -60,7 +60,7 @@ set colorcolumn=80
 set titlestring=
 set titlestring+=%f\       " file name
 set titlestring+=%h%m%r%w  " flags
-set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')} " working directory
+set titlestring+=\ >\ %{substitute(getcwd(),\ $HOME,\ '𝕱~',\ '')} " working directory
 " With this, the gui (gvim and macvim) now doesn't have the toolbar, the left
 " and right scrollbars and the menu.
 set guioptions-=T
@@ -72,11 +72,11 @@ set guioptions-=m
 set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
-set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h15
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h12
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
-set linebreak
+set linebreak                                " line can be split on whitespace only
 set nowrap                                   " no carriage returns
 set novisualbell                             " no blinking .
 set noerrorbells                             " no noise.
@@ -85,14 +85,13 @@ set tabstop=2                                " number of spaces of tab character
 set shiftwidth=2                             " number of spaces to (auto)indent
 set smarttab
 set smartindent
-set expandtab
+set expandtab                                " convert tabs to spaces
 set nostartofline
 set noautowrite                              " don't write on :next
 set autoindent                               " auto indents the next new line
 set timeoutlen=400                           " shortens the lag time with using leader
 set lz                                       " lazy redraw - when macros are running don't redraw
-set backspace=indent,eol,start
-set backspace=2                              " make backspace work the way it should
+set backspace=indent,eol,start               " force delete/backspace
 set whichwrap+=<,>,h,l                       " make backspace and cursor keys wrap accordingly
 set incsearch                                " set search to automatically show the next match while typing
 set ignorecase                               " make searches case-insensitive
@@ -107,23 +106,22 @@ set cursorline cursorcolumn                  " vertical cursorline
 set nobackup
 set nowritebackup
 set noswapfile
-set wildmode=full "complete first full match
+set wildmode=full                            "complete first full match
 set wildignore=*.dll,*.exe,*.pyc,*.pyo,*.egg,*.class
 set wildignore+=*.jpg,*.gif,*.png,*.o,*.obj,*.bak,*.rbc
 set wildignore+=Icon*,\.DS_Store,*.out,*.scssc,*.sassc
 set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
-set wildmenu "show completion matches above command line
+set wildmenu                                 "show completion matches above command line
 set encoding=utf-8
 set list
 set lcs=trail:༎,eol:ᚋ,nbsp:፨,tab:⇥\          "show “invisible” characters
 set helpheight=200                           " help windows take up near full window size
 
-set background=dark
-colorscheme base16-atelierdune
+colorscheme base16-atelierforest
 
-"special overrides for the lcs characters
-hi NonText ctermfg=4 guifg=#444444
-hi SpecialKey ctermfg=4 guifg=#444444
+" override default colors for the LCS characters
+hi NonText ctermfg=4 guifg=#333333 guibg=#102020
+hi SpecialKey ctermfg=4 guifg=#333333 guibg=#102020
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
