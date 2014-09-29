@@ -36,6 +36,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'pangloss/vim-javascript'
 Bundle 'leshill/vim-json'
 Bundle 'slim-template/vim-slim.git'
+Bundle 'reedes/vim-colors-pencil'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           reset vimrc augroup                           "
@@ -87,6 +88,7 @@ set smarttab
 set smartindent
 set expandtab                                " convert tabs to spaces
 set nostartofline
+set iskeyword+=-                             " acts-as-1-word"
 set noautowrite                              " don't write on :next
 set autoindent                               " auto indents the next new line
 set timeoutlen=400                           " shortens the lag time with using leader
@@ -114,14 +116,11 @@ set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
 set wildmenu                                 "show completion matches above command line
 set encoding=utf-8
 set list
-set lcs=trail:༎,eol:ᚋ,nbsp:፨,tab:⇥\          "show “invisible” characters
+set lcs=trail:༎,eol:ᚋ,                       "show “invisible” characters
 set helpheight=200                           " help windows take up near full window size
 
-colorscheme base16-atelierforest
-
-" override default colors for the LCS characters
-hi NonText ctermfg=4 guifg=#333333 guibg=#102020
-hi SpecialKey ctermfg=4 guifg=#333333 guibg=#102020
+colorscheme pencil
+set background=light
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -207,6 +206,11 @@ map K <nop>
 
 " remove extra line spaces
 nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Airline                                 "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_theme = 'pencil'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Ack                                     "
