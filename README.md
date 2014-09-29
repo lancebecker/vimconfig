@@ -42,4 +42,4 @@ Name	     |  Desc                                       | Bindings
 
 ## Screenshot
 
-![](https://camo.githubusercontent.com/eecdcc0e13dec640a9a3becf84759b98d5032689/687474703a2f2f692e696d6775722e636f6d2f653739396333442e706e67)
+![](https://camo.githubusercontent.com/0a75a0a79e9255a99478bd7cd70b60af6d13217b/687474703a2f2f692e696d6775722e636f6d2f634d63706e434c2e706e67)
