@@ -7,36 +7,37 @@ set nocompatible
 " Needed for vundle, will be turned on after vundle inits
 filetype off
 
-" Setup vundle
-set rtp+=~/.dotfiles/vim/bundle/vundle/
-call vundle#rc()
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Vundle configuration                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Setup Vimplug
+call plug#begin('~/.vim/plugged')
 
-Bundle 'gmarik/vundle'
-Bundle 'mileszs/ack.vim'
-Bundle 'ervandew/supertab'
-Bundle 'kien/ctrlp.vim'
-Bundle 'JazzCore/ctrlp-cmatcher'
-Bundle 'c9s/bufexplorer'
-Bundle 'rstacruz/sparkup.git', {'rtp': 'vim/'}
-Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'scrooloose/syntastic'
-Bundle 'chriskempson/base16-vim'
-Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-vinegar'
-Bundle 'tpope/vim-surround'
-Bundle 'mhinz/vim-signify'
-Bundle 'mhinz/vim-hugefile'
-Bundle 'mhinz/vim-startify'
-Bundle 'pangloss/vim-javascript'
-Bundle 'leshill/vim-json'
-Bundle 'slim-template/vim-slim.git'
-Bundle 'reedes/vim-colors-pencil'
+Plug 'mileszs/ack.vim'
+Plug 'ervandew/supertab'
+Plug 'kien/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'c9s/bufexplorer'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'chriskempson/base16-vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-hugefile'
+Plug 'mhinz/vim-startify'
+Plug 'pangloss/vim-javascript'
+Plug 'leshill/vim-json'
+Plug 'slim-template/vim-slim'
+Plug 'reedes/vim-colors-pencil'
+Plug 'whatyouhide/vim-gotham'
+
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           reset vimrc augroup                           "
@@ -119,8 +120,7 @@ set list
 set lcs=trail:༎,eol:ᚋ,                       "show “invisible” characters
 set helpheight=200                           " help windows take up near full window size
 
-colorscheme pencil
-set background=light
+colorscheme gotham
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -146,6 +146,25 @@ au WinEnter * set cursorline cursorcolumn
 
 au vimrc BufEnter *.snippets setf snippets
 au vimrc FileType snippets set noexpandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Functions                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" http://vim.wikia.com/wiki/Better_colors_for_syntax_highlighting
+
+function! ReverseBackground()
+  let Mysyn=&syntax
+  if &bg=="light"
+    se bg=dark
+    highlight Normal guibg=black guifg=white
+  else
+    se bg=light
+    highlight Normal guibg=white guifg=black
+  endif
+  syn on
+  exe "set syntax=" . Mysyn
+endfunction
+command! Invbg call ReverseBackground()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -207,10 +226,13 @@ map K <nop>
 " remove extra line spaces
 nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
+" toggle between light/dark background colors
+noremap <F3> :Invbg<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Airline                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = 'pencil'
+let g:airline_theme = 'gotham'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Ack                                     "
