@@ -33,9 +33,9 @@ Plug 'mhinz/vim-hugefile'
 Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
 Plug 'leshill/vim-json'
-Plug 'slim-template/vim-slim'
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'reedes/vim-colors-pencil'
-Plug 'whatyouhide/vim-gotham'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 call plug#end()
 
@@ -120,7 +120,7 @@ set list
 set lcs=trail:༎,eol:ᚋ,                       "show “invisible” characters
 set helpheight=200                           " help windows take up near full window size
 
-colorscheme gotham
+colorscheme pencil
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -230,14 +230,19 @@ nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<B
 noremap <F3> :Invbg<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Airline                                 "
+"                              Airline                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = 'gotham'
+let g:airline_theme = 'pencil'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Ack                                     "
+"                              Netrw                                      "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>a :Ack
+let g:netrw_liststyle=4
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              Ack                                        "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>a :Ack!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Ctrl P                                     "
