@@ -10,10 +10,6 @@ Link the .vimrc file
 		ln -s ~/.vim/.vimrc ~/.vimrc
 
 
-use Vundle to install the Bundles.
-
-		vim +BundleInstall! +BundleClean +q
-
 Grab and install the **Inconsolata-dz** patched font for Powerline:
 
 <https://gist.github.com/1595572>
@@ -21,9 +17,10 @@ Grab and install the **Inconsolata-dz** patched font for Powerline:
 ## What's packed in this:
 
 ### Package Manager
+This config uses the excellent VimPlug project.
 
-#### [vundle](https://github.com/gmarik/vundle)
-Vundle, the plug-in manager for Vim
+#### [plug](https://github.com/junegunn/vim-plug)
+Minimalist Vim Plugin Manager
 
 
 Name	     |  Desc                                       | Bindings
