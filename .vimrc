@@ -21,8 +21,6 @@ Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'c9s/bufexplorer'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
-Plug 'chriskempson/base16-vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
@@ -41,6 +39,7 @@ Plug 'junegunn/goyo.vim',      { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 Plug 'junegunn/vim-emoji'
 Plug 'airblade/vim-gitgutter'
+Plug 'roman/golden-ratio'
 
 call plug#end()
 
@@ -79,7 +78,7 @@ set guioptions-=m
 set guioptions-=M
 set antialias
 set noshowmode          " don't show the mode ("-- INSERT --") at the bottom
-set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h12
+
 set modelines=0
 set number                                   " show line numbers
 set history=1000                             " limit :cmdline history
@@ -122,11 +121,11 @@ set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
 set wildmenu                                 "show completion matches above command line
 set encoding=utf-8
 set list
-set lcs=trail:༎,eol:ᚋ,                       "show “invisible” characters
+set lcs=trail:༎,eol:ᚋ,  
 set helpheight=200                           " help windows take up near full window size
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h12
 
 colorscheme pencil
-
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
 " be turned off when necessary (for instance, when we want to input special

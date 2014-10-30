@@ -1,13 +1,21 @@
 # vim configs
 
- *Adapted from: https://github.com/Valloric/dotfiles/blob/master/vim/vimrc.vim*
+
+ *Inspired from: 
  
+   - https://github.com/junegunn/dotfiles/blob/master/vimrc
+   - https://github.com/Valloric/dotfiles/blob/master/vim/vimrc.vim*
+
 
 ## Installation
 
-Link the .vimrc file
+Clone the repo into `.vim`
 
-		ln -s ~/.vim/.vimrc ~/.vimrc
+  git clone https://github.com/lrbecker/vimconfig.git .vim
+
+Symlink the .vimrc file
+
+  ln -s ~/.vim/.vimrc ~/.vimrc
 
 
 Grab and install the **Inconsolata-dz** patched font for Powerline:
@@ -19,7 +27,7 @@ Grab and install the **Inconsolata-dz** patched font for Powerline:
 ### Package Manager
 This config uses the excellent VimPlug project.
 
-#### [plug](https://github.com/junegunn/vim-plug)
+#### [vim-plug](https://github.com/junegunn/vim-plug)
 Minimalist Vim Plugin Manager
 
 
