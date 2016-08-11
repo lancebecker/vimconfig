@@ -18,20 +18,23 @@ Plug 'mileszs/ack.vim'
 Plug 'ervandew/supertab'
 Plug 'kien/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'scrooloose/nerdcommenter'
 Plug 'c9s/bufexplorer'
-Plug 'bling/vim-airline'
+Plug 'tpope/vim-vinegar'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-hugefile'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Syntax
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leshill/vim-json'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
-Plug 'statianzo/vim-jade'
+Plug 'statianzo/vim-jade', { 'for': 'jade' }
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -110,7 +113,7 @@ set helpheight=200                           " help windows take up near full wi
 
 set guifont=M+\ 1m\ light:h16
 set linespace=8
-colorscheme PaperColor
+colorscheme one
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -197,14 +200,14 @@ map K <nop>
 " remove extra line spaces
 nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                              Airline                                    "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = 'pencil'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:netrw_liststyle     = 0
+let g:netrw_keepdir       = 1
+let g:netrw_altv          = 1
+let g:netrw_fastbrowse    = 2
+let g:netrw_keepdir       = 0
+let g:netrw_retmap        = 1
+let g:netrw_silent        = 1
+"let g:netrw_special_syntax= 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Ack                                        "
@@ -215,7 +218,7 @@ nnoremap <leader>a :Ack!<CR>
 "                              Ctrl P                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:5,results:5'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:15,results:15'
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_switch_buffer = '0'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
