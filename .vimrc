@@ -15,9 +15,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
-Plug 'ervandew/supertab'
-Plug 'kien/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'c9s/bufexplorer'
 Plug 'tpope/vim-vinegar'
@@ -27,6 +25,10 @@ Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+Plug 'fatih/vim-go'
+Plug 'ervandew/supertab'
+Plug 'JazzCore/ctrlp-cmatcher'
 
 " Syntax
 Plug 'othree/yajs.vim'
@@ -34,6 +36,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'leshill/vim-json'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'statianzo/vim-jade', { 'for': 'jade' }
+
+" ColorScheme
 Plug 'rakr/vim-one'
 
 call plug#end()
@@ -101,19 +105,18 @@ set cursorline cursorcolumn                  " vertical cursorline
 set nobackup
 set nowritebackup
 set noswapfile
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildmode=full                            "complete first full match
-set wildignore=*.dll,*.exe,*.pyc,*.pyo,*.egg,*.class
-set wildignore+=*.jpg,*.gif,*.png,*.o,*.obj,*.bak,*.rbc
-set wildignore+=Icon*,\.DS_Store,*.out,*.scssc,*.sassc
-set wildignore+=.git/*,.hg/*,.svn/*,*/swp/*,*/undo/*,Gemfile.lock
 set wildmenu                                 "show completion matches above command line
 set encoding=utf-8
 set list lcs=trail:·,tab:»·
 set helpheight=200                           " help windows take up near full window size
 
-set guifont=M+\ 1m\ light:h16
+set guifont=M+\ 1m\ light:h18
 set linespace=8
+
 colorscheme one
+set background=dark
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -200,6 +203,11 @@ map K <nop>
 " remove extra line spaces
 nnoremap <silent> <leader><leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
+nmap <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              Netrw
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_liststyle     = 0
 let g:netrw_keepdir       = 1
 let g:netrw_altv          = 1
@@ -207,8 +215,16 @@ let g:netrw_fastbrowse    = 2
 let g:netrw_keepdir       = 0
 let g:netrw_retmap        = 1
 let g:netrw_silent        = 1
-"let g:netrw_special_syntax= 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              Vim GO
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_command = "goimports"
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Ack                                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -218,10 +234,8 @@ nnoremap <leader>a :Ack!<CR>
 "                              Ctrl P                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:15,results:15'
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-let g:ctrlp_switch_buffer = '0'
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Syntastic                                   "
@@ -232,6 +246,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': ['coffee'],
                      \ 'passive_filetypes': ['html, js'] }
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Signify                                     "

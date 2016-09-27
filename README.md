@@ -1,7 +1,7 @@
 # vim configs
 
 
- *Inspired from: 
+ *Inspired from other great vimrc's check them out': 
  
    - https://github.com/junegunn/dotfiles/blob/master/vimrc
    - https://github.com/Valloric/dotfiles/blob/master/vim/vimrc.vim*
@@ -16,10 +16,6 @@ Clone the repo into `.vim`
 Symlink the .vimrc file
 
   ln -s ~/.vim/.vimrc ~/.vimrc
-
-
-I use `M+1M` font, so feel free to change that in the config to what ever font you prefer.
-
 
 
 ## What's packed in this:
@@ -37,6 +33,11 @@ Name	     |  Desc                                       | Bindings
 [bufexplorer](https://github.com/c9s/bufexplorer) | With bufexplorer, you can quickly and easily switch between buffers. | `,be`
 [ack](https://github.com/mileszs/ack.vim) | Vim plugin for the Perl module / CLI script | `,a`
 [supertab](https://github.com/ervandew/supertab) | Perform all your vim insert mode completions with Tab. | `<tab>`
+
+## After Plug installing compile the ctrlp cmatcher project.
+Make sure to install ctrlp-cmatcher correctly.
+
+<https://github.com/JazzCore/ctrlp-cmatcher>
 
 ## Screenshot
 
