@@ -1,7 +1,7 @@
 # vim configs
 
 
- *Inspired from other great vimrc's check them out': 
+ *Inspired from other great vimrc's check them out*: 
  
    - https://github.com/junegunn/dotfiles/blob/master/vimrc
    - https://github.com/Valloric/dotfiles/blob/master/vim/vimrc.vim*
